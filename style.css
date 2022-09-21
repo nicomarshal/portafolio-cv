@@ -1,0 +1,903 @@
+/* ********* Custom Properties ********* */
+:root {
+	--first-color:	#1f74c0; /*#1b82be*/ /*#d90062*/
+	--first-alpha-color: rgba(19.83, 95.477, 139.54, 0.85);/*rgba(217, 0, 98, 0.75)*/
+	--second-color:	#14192d;
+	--second-alpha-color: rgba(20, 25, 45, 0.75);
+	--third-color:	#104c70;
+	--third-alpha-color: rgba(80, 20, 100, 0.75);
+	
+	--white-color: #fff;
+	--gray-light-color: #f3f3f3;
+	--gray-color: #ccc;
+	--gray-dark-color: #666;
+	--black-color: #000;
+	--first-link-color:#1f74c0;
+	--second-link-color: #76b3e9;
+	--link-alpha-color:#add1f2;
+	--title-color: #333;
+	--text-color: #222;
+	--white-alpha-color: rgba(255, 255, 255, 0.5);
+	--black-alpha-color: rgba(0, 0, 0, 0.5);
+
+	--font: "Raleway", sans-serif;
+
+	--max-width: 1200px;
+	--header-height: 4rem;
+}
+/* ********* Reset ********* */
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	font-family: var(--font);
+	scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	color: var(--text-color);
+}
+
+a {
+	color: var(--first-link-color);
+	transition: all 0.5s ease-out;
+}
+
+a:hover {
+	opacity: 0.9;
+}
+
+/*Reseteamos el margen de los encabezados
+a cero*/
+h1 {
+	margin: 0;	
+	font-size: 2rem;
+}
+
+h2 {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+h3 {
+	margin: 0;
+	font-size: 1.25rem;
+}
+
+h4 {
+	margin: 0;
+	font-size: 1.15rem;
+}
+
+h5 {
+	margin: 0;
+	font-size: 0.85rem;
+}
+
+h6 {
+	margin: 0;
+	font-size: 0.7rem;
+}
+
+p {
+	line-height: 1.6; /*Interlineado*/
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.section {
+	padding: 2rem 1rem;
+}
+
+.section-title {
+	border-top: thin solid var(--first-color);
+	border-bottom: thin solid var(--first-color);
+	margin: 2rem auto;
+	padding: 0.5rem 1rem;
+	min-height: 47px;
+	max-width: 250px;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	color: var(--title-color);
+}
+
+.btn {
+	border-radius: 0.5rem;
+	padding: 1rem;
+	display: inline-block;
+	width: 100%;
+	max-width: 200px;
+	height: 48px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: var(--white-color);
+	background-color: var(--first-color);
+}
+
+.box-shadow {
+	box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.none {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* ********* Header ********* */
+.header {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 999;
+	padding: 1rem;
+	width: 100%;
+	height: var(--header-height);
+	background-color: var(--second-color);
+}
+
+.header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo a {
+	color: var(--first-color);
+	font-weight: bold;
+	font-size: 2rem;
+	text-decoration: none;
+}
+
+.menu-btn {
+	outline: thin solid var(--first-color);
+	border: 0;
+	cursor: pointer;
+	background-color: var(--second-color);
+}
+
+.menu-btn svg {
+	fill: var(--first-color);
+}
+
+.menu {
+	position: fixed;
+	left: 0;
+	bottom: var(--header-height);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--second-color);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.5s ease-out;
+}
+
+.menu.is-active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.menu a {
+	padding: 1rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: var(--first-color);
+}
+
+.menu a:hover {
+	color: var(--white-color);
+	background-color: var(--first-color);
+}
+
+/* ********* HeroImage ********* */
+.hero-image {
+	background-image: var(--hero-image);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	background-attachment: var(--hero-attachment);
+}
+
+.hero-image-opacity {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: var(--hero-opacity-color);
+}
+
+.hero-image-title {
+	font-size: 7.5vw;
+	color: var(--hero-text-color);
+}
+
+
+/* ********* ABOUT ********* */
+.about {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about > .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.about .contain {
+	max-width: 370px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.about .profile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about .btn {
+	margin-top: 1rem;
+}
+
+.profile > div {
+	filter: grayscale(1);
+    /* Aquí establecemos el tamaño del avatar, puedes poner los valores que quieras */
+    height: 180px;
+    width: 180px;
+    /* Éstos valores no los tienes que cambiar ya que son en base a proporción */
+    background-repeat: no-repeat; /*Para que la imagen no se repita */
+    background-position: 50%; /*Centrar la imagen en el contenedor*/
+    border-radius: 50%; /*Hace el efecto de redondear el contenedor*/
+    background-size: cover; /*Hace que la imagen ocupe todo el contenedor*/
+}
+/* ********* ProgressBar ********* */
+progress {
+	width: 100%;
+	height: 1rem;
+	background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-bar {
+	background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-value {
+	background-color: var(--gray-dark-color);
+}
+
+/*Para Firefox*/
+
+progress::-moz-progress-bar {
+	background-color: var(--gray-dark-color);
+}
+
+.progress {
+	margin: 1rem auto;
+}
+
+.progress > p {
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.85rem;
+}
+
+/* ********* Services ********* */
+.services {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--gray-light-color);
+}
+
+.services > .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.services .contain {
+	max-width: 370px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+
+.service-card {
+	text-align: center;
+}
+
+.service-card h3 {
+	color: var(--title-color);
+}
+
+.service-card svg {
+	width: 2rem;
+	height: 2rem;
+	margin-bottom: 1.25rem;
+}
+
+/* ********* Portfolio ********* */
+.portfolio {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.portfolio > .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.portfolio .contain {
+	max-width: 370px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.portfolio-card {
+	position: relative;
+	border: 2px solid var(--gray-dark-color);
+	line-height: 0;
+}
+
+.portfolio-card img {
+	/*display: block;*/
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	object-fit: cover;
+}
+
+.portfolio-card-info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	background-color: var(--first-alpha-color);
+	color: var(--white-color);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s ease-in-out;
+}
+
+.portfolio-card:hover .portfolio-card-info {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.portfolio-card-info > div {
+	padding: 1rem;
+	border: thin solid var(--white-color);
+	width: 100%;
+	height: 100%;
+	/*overflow: hidden;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.portfolio-card-info .modal-btn {
+	display: flex;
+	justify-content: center;
+} 
+
+.portfolio-card-info .btn {
+	height: auto;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.portfolio-modal {
+	position: relative;
+	padding: 1rem;
+	width: 90%;
+	max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--white-color);
+}
+
+.portfolio-modal h4 {
+	border-bottom: medium solid var(--first-color);
+	padding: 0.2rem 0;
+	margin: 1rem auto;
+	color: var(--title-color);
+}
+
+.portfolio-modal p {
+	line-height: 1.35;
+}
+
+.portfolio-details {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-auto-rows: 1.25rem;
+}
+
+.portfolio-details b {
+	color: var(--first-color);
+}
+
+/* ********* Modal ********* */
+.modal {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--black-alpha-color);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 1s;
+}
+
+.modal-content {
+	display: flex;
+	justify-content: center;
+}
+
+.modal-close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.modal-close svg {
+	width: 3rem;
+	height: 3rem;
+	fill: var(--first-color);
+}
+
+/*Cuando hacemos referencia al target, eso significa
+que estos estilos se van a aplicar cuando el target de
+la pagina esté en este id interno*/
+/*Cuando la ventana modal con id trabajo-1 esté en el target
+de la página, simplemente le decimos que: */
+/*El | significa que cualquier ventana modal que en su id
+empiece con la palabra trabajo, se va a activar*/
+.modal[id|="trabajo"]:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* ********* Carousel ********* */
+@keyframes carousel-slide {
+	0% {
+		transform: translateX(0%);
+	}
+
+	25% {
+		transform: translateX(-25%);
+	}
+
+	50% {
+		transform: translateX(-50%);
+	}
+
+	75% {
+		transform: translateX(-75%);
+	}
+}
+
+.carousel {
+	margin: 2rem auto;
+	padding: 2rem 0;
+	max-width: 800px;
+	text-align: center;
+	overflow-x: hidden;
+	background-color: var(--white-alpha-color);
+}
+
+.carousel input {
+	display: none;
+}
+
+.carousel .slides {
+	padding-left: 0;
+	/* 100% por cada slide */
+	width: 400%;
+	display: flex;
+	list-style: none;
+	transition: transform 0.5s ease-in-out;
+	animation: carousel-slide 12s ease-in-out 3s;
+}
+
+.carousel .avatar {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+}
+
+.carousel label {
+	border: medium solid var(--gray-dark-color);
+	border-radius: 50%;
+	margin: 0 0.25rem;
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.75rem;
+	cursor: pointer;
+}
+
+.slides h3 {
+	color: var(--first-color);
+}
+/*El signo ~ es un selector que significa
+"mueve al hermano que tienes al lado"*/
+#slide-1:checked ~ .slides {
+	transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides {
+	transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .slides {
+	transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .slides {
+	transform: translateX(-75%);
+}
+
+#slide-1:checked ~ .slides-nav label#dot-1,
+#slide-2:checked ~ .slides-nav label#dot-2,
+#slide-3:checked ~ .slides-nav label#dot-3,
+#slide-4:checked ~ .slides-nav label#dot-4 {
+	background-color: var(--gray-dark-color);
+}
+
+/* ********* CONTACT FORM ********* */
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--gray-light-color);
+}
+
+.contact > .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.contact .contain {
+	max-width: 370px;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+
+.contact-cards {
+	display: flex;
+	justify-content: center;
+	column-gap: 1rem;
+}
+
+.contact-cards svg {
+	fill: var(--first-color);
+}
+
+.contact-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: thin solid var(--first-color);
+	border-radius: 50%;
+	padding: 0.8rem;
+	width: 4rem;
+	height: 4rem;
+}
+/*--------------------------------------------*/
+
+	/*.contact-form input[type="submit"] {
+		margin-left: 0;
+		justify-self: start;
+	}*/
+
+.contact-form {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 1rem;
+	max-width: 800px;
+	width: 100%;
+	background-color: var(--gray-light-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+	font-size: 1rem;
+	font-family: var(--font);
+}
+
+.contact-form textarea {
+	border: thin solid var(--gray-dark-color);
+	resize: none;
+	padding: 0.5rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	border: 0;
+	border-bottom: thin solid var(--gray-dark-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+	outline: none;
+	margin: 1rem auto;
+	width: 100%;
+	background-color: var(--gray-light-color);
+}
+
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form-loader {
+	grid-column: span 2;
+}
+
+.contact-form-loader svg {
+	fill: var(--first-color);
+}
+
+.contact-form input[type="submit"] {
+	max-width: 125px;
+	height: 40px;
+	padding: 0.8rem;
+	border: 0;
+	cursor: pointer;
+	transition: all 0.5s ease-out;
+}
+
+.contact-form input[type="submit"]:hover {
+	opacity: 0.75;
+}
+
+.contact-form *::placeholder {
+	color: var(--gray-dark-color);
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus {
+	border-bottom: 2.8px solid var(--first-color);
+}
+
+.contact-form textarea:focus {
+	border: 2.8px solid var(--first-color);
+}
+
+.contact-form-response {
+	padding: 1rem;
+	width: 400px;
+	text-align: center;
+	background-color: var(--white-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact-form-response svg {
+	margin-top: 1rem;
+	width: 4rem;
+	height: 4rem;
+	fill: var(--first-color);
+}
+
+.modal#gracias:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+/* ********* Contact Form ********* */
+.footer {
+	margin-bottom: var(--header-height);
+	padding: 0.5rem;
+	text-align: center;
+	color: var(--white-color);
+	background-color: var(--third-color);
+}
+
+.footer a {
+	color: var(--second-link-color);
+	text-decoration: none;
+}
+
+.footer a:hover {
+	opacity: 1;
+	color: var(--link-alpha-color);
+}
+
+/*---------------------------------------------*/
+@media screen and (min-width: 768px) {
+	.text-lg-left {
+		text-align: left;
+	}
+
+	.text-lg-right {
+		text-align: right;
+	}
+
+	.about .contain {
+		max-width: 800px;
+		flex-direction: row-reverse;
+		column-gap: 1rem;
+		max-width: 800px;
+	}
+
+	.profile > div {
+	    /* Aquí establecemos el tamaño del avatar, puedes poner los valores que quieras */
+	    height: 200px;
+	    width: 200px;
+	}
+
+	.services .contain {
+		max-width: 800px;
+		display: grid;
+		grid-template-columns: repeat(2, 45%);
+		justify-content: space-between;
+		align-content: center;
+		justify-items: center;
+		align-items: center;
+	}
+
+	.portfolio .contain {
+		max-width: 864px;
+		display: grid;
+		grid-template-columns: repeat(2, 45%);
+		justify-content: center;
+		align-content: center;
+		justify-items: center;
+		align-items: center;
+		grid-gap: 1rem 1rem;
+	}
+
+	.portfolio-modal {
+		flex-direction: row;
+		max-width: 800px;
+	}
+
+	.portfolio-modal img {
+		width: 328px;
+	}
+
+	.portfolio-info {
+		margin-left: 1rem;
+		align-self: center;
+	}
+
+	.portfolio-modal p {
+		line-height: 1.5;
+	}
+
+	.portfolio-details {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		grid-auto-rows: 1.5rem;
+	}
+
+	.contact .contain {
+		max-width: 800px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.full-lg-screen {
+		width: 100%;
+		min-height: 100vh;
+	}
+
+	.header {
+		position: sticky;
+		top: 0;
+		padding: 0.5rem;
+	}
+
+	.menu-btn {
+		display: none;
+	}
+
+	.menu {
+		position: static;
+		width: auto;
+		flex-direction: row;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.menu a {
+		padding: 0 1rem;
+	}
+
+	.menu a:last-child {
+		padding-right: 0;
+	}
+
+	.menu a:hover {
+		background-color: transparent;
+	}	
+
+	.about .contain {
+		max-width: 900px;
+	}
+
+	.services .contain {
+		grid-template-columns: repeat(3, 30%);
+		max-width: 900px;
+	}
+
+	.portfolio .contain {
+		grid-template-columns: repeat(3, 30%);
+		max-width: 958px;
+	}
+
+	.portfolio-card-info h3 {
+		font-size: 1.15rem;
+	}
+
+	.portfolio-card-info p {
+		line-height: 1.4;
+		font-size: 0.95rem;
+	}
+
+	.contact .contain {
+		max-width: 900px;
+		flex-direction: row;
+		justify-content: center;
+		column-gap: 2rem;
+	}
+
+	.contact-cards {
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+
+	.footer {
+		margin-bottom: 0;
+	}	
+}
