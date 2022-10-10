@@ -225,24 +225,45 @@ img {
 }
 
 .hero-image-opacity {
+	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 105vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	background-color: var(--hero-opacity-color);
 }
 
-.hero-image-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	row-gap: 3rem;
+.hero-image-opacity .btn {
+	position: absolute;
+	right: 5vw;
+	bottom: 22vh;
 }
 
-.hero-image-title, .hero-image-subtitle {
+.hero-image-title-0 {
+	position: absolute;
+	bottom: 80vh;
+	left: 5vw;
+	font-size: 3.2rem;
+	color: var(--hero-text-color);
+}
 
+.hero-image-title-1 {
+	position: absolute;
+	bottom: 60vh;
+	left: 18vw;
+	margin: 0;
+	font-size: 3rem;
+	color: var(--hero-text-color);
+}
+
+.hero-image-title-2 {
+	position: absolute;
+	bottom: 40vh;
+	left: 30vw;
+	margin: 0;
 	font-size: 3rem;
 	color: var(--hero-text-color);
 }
@@ -381,7 +402,9 @@ progress::-moz-progress-bar {
 }
 
 .service-card h3 {
+	text-align: center;
 	color: var(--title-color);
+	font-family: sans-serif;
 }
 
 .service-card svg {
@@ -496,6 +519,7 @@ progress::-moz-progress-bar {
 .portfolio-modal img {
 	height: 28%;
 	margin-top: 1rem;
+	border-radius: 1rem;
 }
 
 .portfolio-info {
@@ -859,6 +883,38 @@ empiece con la palabra trabajo, se va a activar*/
 		text-align: right;
 	}
 
+	.hero-image-opacity .btn {
+		position: absolute;
+		right: 12vw;
+		bottom: 22vh;
+	}
+
+	.hero-image-title-0 {
+		position: absolute;
+		bottom: 80vh;
+		left: 12vw;
+		font-size: 3.9rem;
+		color: var(--hero-text-color);
+	}
+
+	.hero-image-title-1 {
+		position: absolute;
+		bottom: 60vh;
+		left: 23vw;
+		margin: 0;
+		font-size: 3.7rem;
+		color: var(--hero-text-color);
+	}
+
+	.hero-image-title-2 {
+		position: absolute;
+		bottom: 40vh;
+		left: 30vw;
+		margin: 0;
+		font-size: 3.7rem;
+		color: var(--hero-text-color);
+	}
+
 	.about .contain {
 		max-width: 800px;
 		flex-direction: row-reverse;
@@ -906,6 +962,7 @@ empiece con la palabra trabajo, se va a activar*/
 
 	.portfolio-modal img {
 		height: 60%;
+		border-radius: 1rem;
 	}
 
 	.portfolio-info {
@@ -931,6 +988,38 @@ empiece con la palabra trabajo, se va a activar*/
 		position: sticky;
 		top: 0;
 		padding: 0.5rem;
+	}
+
+	.hero-image-opacity .btn {
+		position: absolute;
+		right: 16vw;
+		bottom: 15vh;
+	}
+
+	.hero-image-title-0 {
+		position: absolute;
+		bottom: 70vh;
+		left: 16vw;
+		font-size: 4.2rem;
+		color: var(--hero-text-color);
+	}
+
+	.hero-image-title-1 {
+		position: absolute;
+		bottom: 50vh;
+		left: 36vw;
+		margin: 0;
+		font-size: 4rem;
+		color: var(--hero-text-color);
+	}
+
+	.hero-image-title-2 {
+		position: absolute;
+		bottom: 30vh;
+		left: 43vw;
+		margin: 0;
+		font-size: 4rem;
+		color: var(--hero-text-color);
 	}
 
 	.menu-btn {
