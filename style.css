@@ -579,7 +579,6 @@ progress::-moz-progress-bar {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--black-alpha-color);
-	opacity: 0;
 	pointer-events: none;
 	transition: all 1s;
 }
@@ -609,7 +608,7 @@ de la página, simplemente le decimos que: */
 /*El | significa que cualquier ventana modal que en su id
 empiece con la palabra trabajo, se va a activar*/
 .modal[id|="trabajo"]:target {
-	opacity: 1;
+	opacity: 1 !important;
 	pointer-events: auto;
 }
 
@@ -850,8 +849,8 @@ empiece con la palabra trabajo, se va a activar*/
 	fill: var(--first-color);
 }
 
-.modal#gracias:target {
-	opacity: 1;
+.modal#gracias:target, .modal#copy:target {
+	opacity: 1 !important;
 	pointer-events: auto;
 }
 /* ********* Contact Form ********* */
@@ -990,15 +989,25 @@ empiece con la palabra trabajo, se va a activar*/
 		padding: 0.5rem;
 	}
 
+	.hero-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero-image-opacity {
+		max-width: 1100px;
+	}
+
 	.hero-image-opacity .btn {
 		position: absolute;
 		right: 16vw;
-		bottom: 15vh;
+		bottom: 25vh;
 	}
 
 	.hero-image-title-0 {
 		position: absolute;
-		bottom: 70vh;
+		bottom: 80vh;
 		left: 16vw;
 		font-size: 4.2rem;
 		color: var(--hero-text-color);
@@ -1006,7 +1015,7 @@ empiece con la palabra trabajo, se va a activar*/
 
 	.hero-image-title-1 {
 		position: absolute;
-		bottom: 50vh;
+		bottom: 60vh;
 		left: 36vw;
 		margin: 0;
 		font-size: 4rem;
@@ -1015,7 +1024,7 @@ empiece con la palabra trabajo, se va a activar*/
 
 	.hero-image-title-2 {
 		position: absolute;
-		bottom: 30vh;
+		bottom: 40vh;
 		left: 43vw;
 		margin: 0;
 		font-size: 4rem;

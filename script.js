@@ -1,7 +1,15 @@
 "use strict";
 
+//FUNCIONES ANÓNIMAS AUTOEJECUTABLES
+
+/* ********* Reseteo Hash URL******** */
+//Resetear location.hash al recargar la web
+((d) => {
+	history.replaceState({}, d.title, ".");
+})(document);
+
+
 /* ********* Menu ******** */
-//Funciones anónima autoejecutable 
 ((d) => {
 	const $btnMenu = d.querySelector(".menu-btn");
 	const $menu = d.querySelector(".menu");
@@ -66,3 +74,68 @@
 		 })
 	})
 })(document);
+
+/* ********* SendEmail ******** */
+((d) => {
+	//Seleccionamos el boton de email
+	const $email = d.querySelector(".email");
+	/*Segun la resolución de pantalla, el botón de email va a comportarse
+	de una forma u otra*/
+	let mqlDesk = matchMedia("(min-width: 1024px)");
+	let mqlMovil = matchMedia("(max-width: 1024px)");
+
+	//Función que copia el email al portapapeles del usuario
+	const copyEmail = () => {
+		//Creamos un input
+		const $aux = d.createElement("input");
+	  	//Al input le asignamos como valor nuestro email
+	  	$aux.setAttribute("value", "dev.ledesmanicolas@gmail.com");
+	  	//Añadimos el input al body
+	  	d.body.appendChild($aux);
+	  	//Seleccionamos su contenido
+	  	$aux.select();
+	  	//Copiamos el contenido al portapapeles
+	  	d.execCommand("copy");
+	  	//Removemos el input
+	  	d.body.removeChild($aux);	
+
+	  	location.hash = "#copy";
+	  	//alert("Email copiado al portapapeles");
+	}
+
+	if (screen.width > 1024) {
+		console.log("la tenes adentro");
+		console.log("Hola Desktop");
+		$email.classList.add("not-active");
+		$email.removeAttribute("href");
+		$email.addEventListener("click", copyEmail);
+	}
+
+	//Si la resolución es mayor a 1024px...
+	mqlDesk.addEventListener("change", mql => {
+		if (mql.matches) {
+			console.log("Hola Desktop");
+			$email.classList.add("not-active");
+			$email.removeAttribute("href");
+			$email.addEventListener("click", copyEmail);
+		}
+		else {
+			console.log("Chau Desktop");
+		}
+	})
+	//Si la resolución es menor a 1024px...
+	mqlMovil.addEventListener("change", mql => {
+		if (mql.matches) {
+			if($email.classList.contains("not-active")){
+				console.log("Hola Movil");
+				$email.removeEventListener("click", copyEmail);	
+				$email.classList.remove("not-active");
+				$email.setAttribute("href", "mailto:dev.ledesmanicolas@gmail.com");
+			}	
+		}
+		else {
+			console.log("Chau Movil");
+		}
+	})
+})(document);
+
