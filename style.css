@@ -989,45 +989,35 @@ empiece con la palabra trabajo, se va a activar*/
 		padding: 0.5rem;
 	}
 
-	.hero-image {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.hero-image-opacity {
-		max-width: 1100px;
-	}
-
 	.hero-image-opacity .btn {
 		position: absolute;
-		right: 16vw;
-		bottom: 25vh;
+		right: 17vw;
+		bottom: 22vh;
 	}
 
 	.hero-image-title-0 {
 		position: absolute;
 		bottom: 80vh;
-		left: 16vw;
-		font-size: 4.2rem;
+		left: 17vw;
+		font-size: 3.9rem;
 		color: var(--hero-text-color);
 	}
 
 	.hero-image-title-1 {
 		position: absolute;
 		bottom: 60vh;
-		left: 36vw;
+		left: 28vw;
 		margin: 0;
-		font-size: 4rem;
+		font-size: 3.7rem;
 		color: var(--hero-text-color);
 	}
 
 	.hero-image-title-2 {
 		position: absolute;
 		bottom: 40vh;
-		left: 43vw;
+		left: 38vw;
 		margin: 0;
-		font-size: 4rem;
+		font-size: 3.7rem;
 		color: var(--hero-text-color);
 	}
 
@@ -1092,4 +1082,38 @@ empiece con la palabra trabajo, se va a activar*/
 	.footer {
 		margin-bottom: 0;
 	}	
+}
+
+@media screen and (min-width: 1224px) {
+	.hero-image-opacity .btn {
+		position: absolute;
+		right: 22vw;
+		bottom: 22vh;
+	}
+
+	.hero-image-title-0 {
+		position: absolute;
+		bottom: 80vh;
+		left: 22vw;
+		font-size: 4.2rem;
+		color: var(--hero-text-color);
+	}
+
+	.hero-image-title-1 {
+		position: absolute;
+		bottom: 60vh;
+		left: 33vw;
+		margin: 0;
+		font-size: 4rem;
+		color: var(--hero-text-color);
+	}
+
+	.hero-image-title-2 {
+		position: absolute;
+		bottom: 40vh;
+		left: 43vw;
+		margin: 0;
+		font-size: 4rem;
+		color: var(--hero-text-color);
+	}
 }
