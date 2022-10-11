@@ -86,21 +86,27 @@
 
 	//Función que copia el email al portapapeles del usuario
 	const copyEmail = () => {
-		//Creamos un input
-		const $aux = d.createElement("input");
-	  	//Al input le asignamos como valor nuestro email
-	  	$aux.setAttribute("value", "dev.ledesmanicolas@gmail.com");
-	  	//Añadimos el input al body
-	  	d.body.appendChild($aux);
-	  	//Seleccionamos su contenido
-	  	$aux.select();
-	  	//Copiamos el contenido al portapapeles
-	  	d.execCommand("copy");
-	  	//Removemos el input
-	  	d.body.removeChild($aux);	
+		let opcion = confirm("¿Acepta copiar la dirección 'dev.ledesmanicolas@gmail.com' al portapapeles?");
+		if (opcion === true) {
+			//Creamos un input
+			const $aux = d.createElement("input");
+		  	//Al input le asignamos como valor nuestro email
+		  	$aux.setAttribute("value", "dev.ledesmanicolas@gmail.com");
+		  	//Añadimos el input al body
+		  	d.body.appendChild($aux);
+		  	//Seleccionamos su contenido
+		  	$aux.select();
+		  	//Copiamos el contenido al portapapeles
+		  	d.execCommand("copy");
+		  	//Removemos el input
+		  	d.body.removeChild($aux);	
 
-	  	location.hash = "#copy";
-	  	//alert("Email copiado al portapapeles");
+		  	location.hash = "#copy";
+		  	
+		  	setTimeout(() => {
+		 		location.hash = `#close`;
+		 	}, 3000);
+		}
 	}
 
 	if (screen.width > 1024) {
@@ -108,7 +114,10 @@
 		console.log("Hola Desktop");
 		$email.classList.add("not-active");
 		$email.removeAttribute("href");
-		$email.addEventListener("click", copyEmail);
+
+
+		$email.addEventListener("click", copyEmail);			
+		
 	}
 
 	//Si la resolución es mayor a 1024px...
