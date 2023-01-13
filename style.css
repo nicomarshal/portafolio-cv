@@ -444,14 +444,17 @@ progress::-moz-progress-bar {
 	position: relative;
 	border-radius: 1rem;
 	line-height: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	background-color: var(--second-color);
 }
 
 .portfolio-card img {
 	/*display: block;*/
-	width: 100%;
-	height: 100%;
 	border-radius: 1rem;
-	object-fit: ;
+	object-fit: cover;
 	/*object-position: 10% 10%;*/
 }
 
@@ -519,6 +522,7 @@ progress::-moz-progress-bar {
 
 .portfolio-modal img {
 	height: 28%;
+	width: 30%;
 	margin-top: 1rem;
 	border-radius: 1rem;
 }
@@ -528,6 +532,7 @@ progress::-moz-progress-bar {
 	flex-direction: column;
 	align-items: center;
 	row-gap: 0.5rem;
+	height: auto;
 }
 
 .portfolio-info h4 {
@@ -1051,7 +1056,7 @@ empiece con la palabra trabajo, se va a activar*/
 	}
 
 	.services .contain {
-		grid-template-columns: repeat(3, 30%);
+		grid-template-columns: repeat(4, 23%);
 		max-width: 900px;
 	}
 
